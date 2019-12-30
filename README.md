@@ -1,12 +1,15 @@
 一. 安装：
   1. 下载ES:	 
+    
     wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.3.tar.gz
 
   2. 解压并移动到local目录下
+    
     $ tar -zxvf elasticsearch-5.5.3.tar.gz
     $ mv elasticsearch-5.5.3 /usr/local/elasticsearch
 
   3. 修改config 目录下的elasticsearch.yml 文件
+    
     vim elasticsearch.yml
     // 去掉行开头的 # 并重命名集群名，这里命名为 compass
     cluster.name: compass
@@ -14,9 +17,11 @@
     node.name: node-1
 
   4. 进入 bin 目录启动 ES 并在后台运行
+    
     $ ./elasticsearch -d
 
   5. 启动之后测试是否正常
+    
     curl	127.0.0.1:9200
 
   6. Logstash 
@@ -29,6 +34,7 @@
       $ mv logstash-5.5.3 /usr/local/logstash
 
    7. kibana
+      
      7.1 下载安装包
       $ wget https://artifacts.elastic.co/downloads/kibana/kibana-5.5.3-linux-x86_64.tar.gz
 
@@ -48,7 +54,9 @@
         $ ./kibana
 
 二. 日常问题
+
   1. 不能使用管理员运行，此时需要切换到普通账户或者新建ES账号
+    
     1.1	新建用户组
       $ groupadd elsearch
     
@@ -68,6 +76,7 @@
           将elsearch安装目录授权给 用户组：用户  即 elsearch：elsearch
 
   2. 只能使用127.0.0.1 或者 localhost访问，使用ip地址无法访问。
+    
     2.1 修改 elasticsearch.yml 中的 network.host
       $ network.host: 0.0.0.0
     
