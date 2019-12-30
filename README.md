@@ -20,6 +20,7 @@
     curl	127.0.0.1:9200
 
   6. Logstash 
+    
     6.1 下载安装包
       $ wget https://artifacts.elastic.co/downloads/logstash/logstash-5.5.3.tar.gz
 
